@@ -1,6 +1,9 @@
-echo 'registering fileserver service as deamon process!'
+echo 'moving file to systemd location...'
 sudo mv fileserver.service /lib/systemd/system/fileserver.service
-sudo systemctl enable fileserver.service
+echo 'restarting systemd deamon...'
+systemctl daemon-reload
+echo 'registering fileserver service as deamon process!'
+systemctl enable fileserver.service
 echo 'starting fileserver deamon process...'
-sudo systemctl start fileserver.service
+systemctl start fileserver.service
 echo 'complete!'

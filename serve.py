@@ -41,7 +41,7 @@ def list_all():
             <title>Rpi File Server</title>
         </head>
         <body>
-            <h1>Shared files -</h1>
+            <h1>trFS a.k.a Tiny RESTful File Server</h1>
             <ol>{files_html}</ol>
         </body>
     </html>

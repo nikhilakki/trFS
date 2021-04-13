@@ -1,1 +1,2 @@
-sudo systemctl restart fileserver.service
+systemctl daemon-reload
+systemctl restart fileserver.service

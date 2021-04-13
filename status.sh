@@ -1,1 +1,1 @@
-sudo systemctl status fileserver.service
+systemctl status fileserver.service
