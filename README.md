@@ -37,8 +37,8 @@ sudo ./register.sh # registers & initiates the process with systemd - sudo will 
 
 create .env file with following content (customize it as requried)
 ```
-PORT=80
-SHAREPATH="${work_dir}/files"
+PORT=8080 # configurable 
+SHAREPATH="/home/pi/share/files" # change this according to your setup
 ```
 then run the following commands on bash
 
