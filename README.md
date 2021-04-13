@@ -5,6 +5,11 @@ This app is very basic and serves the purpose it was built for :)
 
 * Feel free to customize it as per your liking! 
 
+### Requirements -
+
+- Linux OS
+- Python 3.7+
+- pipenv (for virtualenv & dependencies installation)
 
 ### How to install
 
