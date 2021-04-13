@@ -24,20 +24,21 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-folder_path = os.getenv("SHAREPATH", "/home/pi/share/files")
-port = os.getenv("PORT", 8080)
+FOLDER_PATH = os.getenv("SHAREPATH", "/home/pi/share/files")
+PORT = os.getenv("PORT", 8080)
+EXTENSIONS = ["pdf", "mobi", "epub"] # add more extensions to list as required
 
 app = FastAPI()
-app.mount("/share/", StaticFiles(directory=folder_path), name="files")
+app.mount("/share/", StaticFiles(directory=FOLDER_PATH), name="files")
 
 @app.get("/")
 def list_all():
-    files = [f"<li><a href='/share/{item}'>{item}</li>" for item in os.listdir(folder_path) if item.lower().split(".")[-1] == "pdf"]
+    files = [f"<li><a href='/share/{item}'>{item}</li>" for item in os.listdir(FOLDER_PATH) if item.lower().split(".")[-1] in EXTENSIONS]
     files_html = "\n".join(files)
     html_content = f"""
     <html>
         <head>
-            <title>Rpi Share File Server</title>
+            <title>Rpi File Server</title>
         </head>
         <body>
             <h1>Shared files -</h1>
@@ -49,5 +50,5 @@ def list_all():
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=port)
+    uvicorn.run(app, host="0.0.0.0", port=PORT)
 
