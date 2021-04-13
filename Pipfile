@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+aiofiles = "*"
+fastapi = "*"
+uvicorn = "*"
+
+[dev-packages]
+black = "*"
+pylama = "*"
+
+[requires]
+python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
