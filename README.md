@@ -20,32 +20,34 @@ This app is very basic and serves the purpose it was built for :)
 - Python 3.7+
 - pipenv (for virtualenv & dependencies installation)
 
-### How to install
+### Install & Setup trFS
 
 ```bash
 git clone https://github.com/nikhilakki/trFS.git
 cd trFS
 python3 -m pip install pipenv # if pipenv is not installed on your system
 python3 -m pipenv install # to install all python depedencies for this app
+```
+> create .env file with following content (customize it as requried)
 
+```
+PORT=8080 # configurable 
+SHAREPATH="/home/pi/share/files" # change this according to your setup
+```
+
+```bash
 pipenv run python generate_servicefile.py # generate systemd service file
 sudo ./register.sh # registers & initiates the process with systemd - sudo will be required, please check the script before running
 ./status.sh # shows whether service has started successfully 
 ```
 
-### How to run
+*Once above steps are completed the application will run in the background 24/7*
 
-create .env file with following content (customize it as requried)
-```
-PORT=8080 # configurable 
-SHAREPATH="/home/pi/share/files" # change this according to your setup
-```
-then run the following commands on bash
+### Uninstall -
 
 ```bash
-export work_dir=$(pwd)
-./register.sh
-./status.sh
+sudo ./stop.sh
+rm -r ../trFS
 ```
 
 *Tested on Raspbian Linux for Rpi3*
