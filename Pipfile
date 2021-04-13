@@ -7,13 +7,8 @@ name = "pypi"
 aiofiles = "*"
 fastapi = "*"
 uvicorn = "*"
-
-[dev-packages]
-black = "*"
-pylama = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.7"
 
-[pipenv]
-allow_prereleases = true
