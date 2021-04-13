@@ -9,8 +9,8 @@ This app is very basic and serves the purpose it was built for :)
 ### How to install
 
 ```bash
-git clone <repo path>
-cd <repo path>
+git clone https://github.com/nikhilakki/trFS.git
+cd trFS
 python3 -m pip install pipenv # if pipenv is not installed on your system
 python3 -m pipenv install # to install all python depedencies for this app
 ```
